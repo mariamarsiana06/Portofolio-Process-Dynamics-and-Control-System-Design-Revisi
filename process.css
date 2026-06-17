@@ -1,0 +1,200 @@
+:root {
+    --primary-color: #1d1d1f;
+    --text-color: #333336;
+    --text-muted: #86868b;
+    --bg-main: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --border-radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.text-content {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--bg-secondary);
+}
+
+/* Hero Section: Overlay + Gambar16 */
+.hero {
+    height: 55vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(29, 29, 31, 0.85), rgba(40, 40, 43, 0.85)), url('image/gambar16.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #d1d1d6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* General Sections */
+section {
+    padding: 100px 20px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    letter-spacing: -0.01em;
+}
+
+.overview p {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+/* Grid & Cards - 2 Kolom untuk layar lebar */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 40px;
+}
+
+.image-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.image-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Wrapper Gambar Screenshot (Menggunakan Contain agar kode/grafik tidak terpotong) */
+.img-wrapper {
+    height: 350px; 
+    padding: 15px; 
+    background-color: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+/* Card Content */
+.card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.4rem; 
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-size: 1.1rem; 
+    color: #333336; 
+    line-height: 1.7;
+}
+
+/* Tags Styling */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.tags span {
+    background: white;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid #d2d2d7;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.tags span:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Varian Tag untuk Engineering Approach (Transparan dengan outline) */
+.tags .tag-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+}
+
+.tags .tag-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
